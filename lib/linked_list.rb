@@ -4,19 +4,22 @@ class LinkedList
     @head = nil
   end
 
+  
+
   def append(data)
-    if @head.nil?
-      head_node = Node.new(data)
-      @head = head_node
-    else
-      new_node = Node.new(data)
-      @head = current_node
-      until current_node.next_node.nil?
-        current_node = current_node.next_node
+   if @head.nil? ##if nothing is here i need to start a node. if head is nil create new node
+      @head = Node.new(data)
+      else
+        new_node = Node.new(data)
+        current_node = @head
+        until current_node.next_node.nil?
+          current_node = current_node.next_node
+        end
+        current_node.next_node = new_node  
       end
-      current_node.next_node = new_node
-    end
-  end
+   end
+  
+
 
   def count
     count = 0
@@ -32,5 +35,19 @@ class LinkedList
    end
   end
 
+  def to_string
+    data_string = ""
+    if @head.nil?
+      data_string
+    else
+      data_string = @head.data
+      current_node = @head
+        until current_node.next_node.nil?
+          current_node = current_node.next_node
+          data_string = data_string + " " + current_node.data
+        end
+        data_string
+    end
+  end
   
 end
