@@ -81,14 +81,9 @@ RSpec.describe LinkedList do
     list.prepend("dop")
     list.insert(1, "woo")
 
+    expect(list.to_string).to eq("dop woo plop suu")
   end
-
 end
 
 
-
-# > list.insert(1, "woo")
-# => "woo"
-# list.to_string
-# => "dop woo plop suu"
 
