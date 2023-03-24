@@ -7,7 +7,7 @@ class LinkedList
   
 
   def append(data)
-   if @head.nil? ##if nothing is here i need to start a node. if head is nil create new node
+   if @head.nil? 
       @head = Node.new(data)
       else
         new_node = Node.new(data)
@@ -48,6 +48,12 @@ class LinkedList
         end
         data_string
     end
+  end
+
+  def prepend(data)
+   front_node = Node.new(data)
+   front_node.next_node = @head
+   @head = front_node
   end
   
 end
