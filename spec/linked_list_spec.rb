@@ -83,6 +83,24 @@ RSpec.describe LinkedList do
 
     expect(list.to_string).to eq("dop woo plop suu")
   end
+
+  it 'finds element index and specifies how many elements to return' do
+    list = LinkedList.new
+
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+
+
+    expect(list.to_string).to eq("deep woo shi shu blop")
+    expect(list.find(2, 1)).to eq("shi")
+    expect(list.find(0, 2)).to eq("deep woo")
+    expect(list.find(1, 4)).to eq("woo shi shu blop")
+  end
+
+  
 end
 
 
