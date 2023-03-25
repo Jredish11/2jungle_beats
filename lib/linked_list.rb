@@ -13,7 +13,7 @@ class LinkedList
         new_node = Node.new(data)
         current_node = @head
         until current_node.next_node.nil?
-          current_node = current_node.next_node
+          current_node = current_node.next_node   
         end
         current_node.next_node = new_node  
       end
@@ -60,15 +60,22 @@ class LinkedList
    if index == 0
       prepend(data)
    else
-      until index == index
+    current_node = @head
+    current_index = 1
+      until current_index == index
         @head = @head.next_node
         append(data) if @head != nil
-          index += 1
+        current_index += 1
         end
         inserted_node = Node.new(data)
         inserted_node.next_node = @head.next_node
         @head.next_node = inserted_node
     end
+  end
+
+  def find(index, elements)
+    beats_array = to_string.split[index, elements]
+    beats_array.join(" ")
   end
 
 
