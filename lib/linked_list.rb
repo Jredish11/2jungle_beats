@@ -63,19 +63,23 @@ class LinkedList
     current_node = @head
     current_index = 1
       until current_index == index
-        @head = @head.next_node
-        append(data) if @head != nil
+        current_node = current_node.next_node
         current_index += 1
         end
         inserted_node = Node.new(data)
-        inserted_node.next_node = @head.next_node
-        @head.next_node = inserted_node
+        inserted_node.next_node = current_node.next_node
+        current_node.next_node = inserted_node
     end
   end
 
   def find(index, elements)
     beats_array = to_string.split[index, elements]
     beats_array.join(" ")
+  end
+
+  def includes?(element)
+    beats_array = to_string.split
+    beats_array.include?(element)
   end
 
 
