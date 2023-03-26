@@ -61,13 +61,10 @@ RSpec.describe LinkedList do
     list = LinkedList.new
 
     list.append("plop")
-
     expect(list.to_string).to eq("plop")
 
     list.append("suu")
-    
     list.prepend("dop")
-
     expect(list.to_string).to eq("dop plop suu")
 
     expect(list.count).to eq(3)
@@ -101,7 +98,7 @@ RSpec.describe LinkedList do
   end
 
   it 'checks to see if list includes elements of data' do
-        list = LinkedList.new
+    list = LinkedList.new
 
     list.append("deep")
     list.append("woo")
@@ -113,7 +110,20 @@ RSpec.describe LinkedList do
     expect(list.includes?("dep")).to eq(false)
   end
 
-  
+  it 'can remove(.pop) data(beats) off the list' do
+    list = LinkedList.new
+
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+
+    list.pop
+    list.pop
+
+    expect(list.to_string).to eq("deep woo shi")
+  end
 
 
 
