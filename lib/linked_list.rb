@@ -4,8 +4,6 @@ class LinkedList
     @head = nil
   end
 
-  
-
   def append(data)
    if @head.nil? 
       @head = Node.new(data)
@@ -19,8 +17,6 @@ class LinkedList
     end
   end
   
-
-
   def count
     count = 0
    if @head.nil?
@@ -83,23 +79,19 @@ class LinkedList
   end
 
   def pop
-    if @head.nil? #if head is nil return nil
+    if @head.nil? 
       nil
-    elsif @head.next_node.nil? #if list isn't empty, checks if @head.next_node is nil, if there's only 1 node in list it sets @head = nil and returns data from node.
+    elsif @head.next_node.nil? 
       pop_data = @head.data
       pop_data
     else
       current_node = @head
-      until current_node.next_node.next_node.nil? #if theres more than one node in list, method traverses to the second-to-last node in the list by starting at @head and iterating through the nodes until the next_node of the current node is nil.  
-        current_node = current_node.next_node   #current_node = 2nd to last node in list. once 2nd to last in list is found, method takes data from last node current_node = current_node.next_node. saves it to pop_data variable.
+      until current_node.next_node.next_node.nil?   
+        current_node = current_node.next_node  
       end
       pop_data = current_node.next_node.data 
-      current_node.next_node = nil #sets the next_node of the 2nd to last node to nil, removing it from the list
-      pop_data #returns variable which contains data from the last node that was removed.
+      current_node.next_node = nil 
+      pop_data 
     end
   end
-
-
-
-
 end
