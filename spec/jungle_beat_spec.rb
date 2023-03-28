@@ -26,6 +26,11 @@ RSpec.describe JungleBeat do
 
 
     expect(jb.list.head.data).to eq("deep")
+    expect(jb.list.head.next_node.data).to eq("doo")
+
+    jb.append("woo hoo shu")
+
+    expect(jb.count).to eq(6)
   end
 
 end
