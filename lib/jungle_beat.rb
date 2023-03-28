@@ -31,6 +31,10 @@ class JungleBeat
     count
    end
   end
+
+  def play 
+    `say -r 300 #{@list.head.data} #{@list.head.next_node.data} #{@list.head.next_node.next_node.data} #{@list.head.next_node.next_node.next_node.data} #{@list.head.next_node.next_node.next_node.next_node.data} #{@list.head.next_node.next_node.next_node.next_node.next_node.data}`
+  end
 end
   
   
