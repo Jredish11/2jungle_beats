@@ -131,10 +131,4 @@ RSpec.describe LinkedList do
 end
 
 
-# > list.pop
-# => "blop"
-# > list.pop
-# => "shu"
-# > list.to_string
-# => "deep woo shi"
 
