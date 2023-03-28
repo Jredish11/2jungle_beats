@@ -33,13 +33,21 @@ RSpec.describe JungleBeat do
     expect(jb.count).to eq(6)
   end
 
+  it 'it plays the beats' do
+    jb = JungleBeat.new
+    
+    jb.append("deep doo ditt woo hoo shu")
+
+    expect(jb.count).to eq(6)
+    expect(jb.list.count).to eq(6)
+   
+    jb.play
+  end
+
 end
 
 
 
-# > jb.list.head.next_node.data
-# => "doo"
-# > jb.append("woo hoo shu")
-# => "woo hoo shu"
-# > jb.count
-# 6
+
+# > jb.play
+# => # plays the sounds deep doo ditt woo hoo shu
