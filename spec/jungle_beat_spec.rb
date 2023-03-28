@@ -43,11 +43,7 @@ RSpec.describe JungleBeat do
    
     jb.play
   end
-
 end
 
 
 
-
-# > jb.play
-# => # plays the sounds deep doo ditt woo hoo shu
