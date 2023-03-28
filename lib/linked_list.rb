@@ -1,5 +1,5 @@
 class LinkedList
-  attr_reader :head
+  attr_accessor :head
   def initialize
     @head = nil
   end
@@ -9,15 +9,15 @@ class LinkedList
   def append(data)
    if @head.nil? 
       @head = Node.new(data)
-      else
+    else
         new_node = Node.new(data)
         current_node = @head
         until current_node.next_node.nil?
           current_node = current_node.next_node   
         end
         current_node.next_node = new_node  
-      end
-   end
+    end
+  end
   
 
 
